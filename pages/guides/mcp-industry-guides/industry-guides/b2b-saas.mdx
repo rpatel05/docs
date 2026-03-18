@@ -1,0 +1,146 @@
+import { Callout } from 'nextra/components'
+
+# B2B SaaS
+
+## Connect product usage with sales pipeline, support, and revenue data
+
+B2B SaaS companies live at the intersection of product usage and commercial outcomes. The MCP server unlocks the ability to combine Mixpanel's product analytics with CRM data, support tickets, billing records, and team collaboration tools — creating a unified view from signup to expansion.
+
+## Use Cases & Data Joins
+
+### Product Usage × Sales Pipeline (PQL Scoring)
+
+> **The Question:** *"Which trial users have the highest feature adoption, and what stage are they at in the Salesforce pipeline?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Feature usage, activation events |
+| Salesforce | Opportunity stage, lead score |
+
+**Business Value:** Build product-qualified lead models that prioritize outreach based on actual product engagement, not just demographic fit.
+
+### Feature Adoption × Support Tickets (Churn Prediction)
+
+> **The Question:** *"Are accounts with declining usage also generating more support tickets?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Usage trends, retention |
+| Zendesk/Intercom | Ticket volume, sentiment |
+
+**Business Value:** Create early warning systems combining behavioral and support signals to identify at-risk accounts before they churn.
+
+### Activation Funnel × Revenue Expansion
+
+> **The Question:** *"Do accounts that complete all onboarding steps in week 1 have higher expansion revenue at 12 months?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Onboarding funnel |
+| Stripe/billing | MRR, expansion events |
+
+**Business Value:** Quantify the long-term revenue impact of activation milestones to optimize your onboarding investment.
+
+### User Engagement × Account Health
+
+> **The Question:** *"Which enterprise accounts have power users who've gone inactive in the last 14 days?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | User-level engagement |
+| CRM | Account tier, CSM assignment |
+
+**Business Value:** Give CS teams actionable, real-time intelligence tied to actual product behavior.
+
+### Release Impact × Bug Reports
+
+> **The Question:** *"After v3.2, which new features are driving the most support tickets vs. usage volume?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Feature usage post-release |
+| Sentry/Jira | Error reports, bug tickets |
+
+**Business Value:** Correlate release quality with user impact to improve QA and release planning.
+
+## Prompts by Role
+
+### Product Manager
+
+- Show me a funnel from signup to workspace created to first invite to first report built, by plan type
+- What's the weekly retention for users who completed 3+ key actions in their first session?
+- Which features have the highest usage on Enterprise vs. Pro plan?
+- What's the average time-to-value (how long to reach our "aha moment" event)?
+- Compare feature adoption between invited users vs. workspace creators
+- What's the funnel from trial to activation milestone to upgrade conversation to paid conversion?
+- Show me the impact of our last release: new feature adoption and retention change
+- Which features are most correlated with 30-day retention? Rank them
+- What's the engagement pattern in the 2 weeks before upgrade?
+- How does onboarding completion differ for users who watch the tutorial vs. skip?
+
+### Data Analyst
+
+- Pull the monthly cohort retention table for the past 12 months (M0 through M6)
+- What's the frequency distribution of our core action per week?
+- Segment all users by company_size and show engagement metrics for each
+- Which user properties correlate strongest with long-term retention?
+- Show me the event taxonomy (all events with 30-day volume, sorted by frequency)
+- What data quality issues exist? Events with low property fill rates or inconsistent naming?
+- DAU trend for 6 months segmented by platform (web, iOS, Android, API)
+- What's the power user curve? Distribution by days active per month
+- List all properties on "Feature Used" and top 20 values for feature_name
+- Week-over-week trends for our top 10 events (any significant decline)?
+
+### RevOps / Sales Lead
+
+- Which trial accounts completed 3+ activation milestones this week?
+- Trial-to-paid conversion rate by acquisition channel for the past quarter?
+- Usage pattern difference between trials that convert vs. don't (what predicts conversion)?
+- Which enterprise trials invited 5+ team members? Those are hot signals
+- Average time from trial start to paid conversion, by company size?
+- Accounts where usage increased 50%+ MoM (these are expansion candidates)
+- Which features are most used by accounts that expand within 12 months?
+- Trial accounts that hit PQL threshold this month but haven't been contacted?
+- Win rate for deals where the champion is a heavy user vs. outbound-sourced deals?
+- Engagement of pipeline accounts vs. churned accounts (what's the early warning signal)?
+
+### Customer Success Manager
+
+- Health check for [Account Name]: WAU, feature adoption breadth, trend vs. baseline
+- Which accounts have seen a 20%+ usage decline over the past 30 days?
+- Feature adoption gap between my healthiest and at-risk accounts?
+- Accounts with users who haven't logged in for 14+ days but were previously active weekly?
+- Onboarding completion status for accounts started in the past 60 days?
+- Accounts only using 1-2 features? These are shallow adoption and at risk
+- Engagement summary for all accounts in my book (sort by declining usage)
+- Accounts where one power user does all the activity? That's key-person risk
+- Support event pattern for my top 5 largest accounts?
+- This quarter's usage for [Account Name] vs. last quarter (what changed)?
+
+### Engineering Lead
+
+- After our last deploy, did error event volume or rate change?
+- Which features have the highest latency-related events?
+- Adoption curve for the feature shipped 2 weeks ago (daily active users since launch)?
+- Trend in "Error Encountered" events over 90 days, by error_type?
+- Which platform has the highest crash or error events per session?
+
+### Executive
+
+- Company dashboard: WAU, DAU/MAU ratio, activation rate, trial conversion, net retention (WoW and QoQ)
+- Overall product health? Engagement trends, feature adoption breadth, leading churn indicator
+- Which customer segment is growing fastest in product adoption?
+- Free-tier engagement vs. paid? Are we converting our most engaged free users?
+- Leading indicator that an account will expand (what behavior shows up 30 days before)?
+
+## Recommended Data Connections
+
+| Source | Purpose |
+|--------|---------|
+| ☁️ Salesforce / HubSpot | Pipeline & account context |
+| 💳 Stripe | Billing, MRR & expansion data |
+| 🎧 Zendesk / Intercom | Support ticket correlation |
+| 💬 Slack | Surface insights to GTM teams |
+| 🐛 Sentry | Error & stability monitoring |
+| 🔧 Jira / Linear | Product issue tracking |
+| 📝 Notion | Product documentation & wikis |

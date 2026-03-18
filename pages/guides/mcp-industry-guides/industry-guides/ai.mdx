@@ -1,0 +1,126 @@
+import { Callout } from 'nextra/components'
+
+# AI
+
+## Connect product analytics with model performance, evals, and cost data
+
+AI companies face a unique challenge: product quality depends not just on UX, but on model performance. The MCP server lets you combine Mixpanel's product analytics with model evaluation data, error tracking, and infrastructure costs — enabling you to understand how model quality translates into user outcomes.
+
+## Use Cases & Data Joins
+
+### User Engagement × Model Quality (Eval Scores)
+
+> **The Question:** *"Do users who interact with higher-scoring model outputs have better retention?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Engagement events, thumbs up/down |
+| Eval platform | Model scores, quality metrics |
+
+**Business Value:** Correlate model quality with user retention, giving ML a product-centric optimization target.
+
+### Feature Usage × Infrastructure Cost
+
+> **The Question:** *"Which AI features have the highest per-user compute cost vs. retention impact?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Feature usage events |
+| Cloud provider | Compute costs, API call volumes |
+
+**Business Value:** Optimize cost-to-serve by understanding which expensive features drive actual user value.
+
+### Error Rates × User Drop-off
+
+> **The Question:** *"When error rates spike, how quickly does it impact session frequency?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Session frequency, feature events |
+| Sentry | Error rates, latency data |
+
+**Business Value:** Quantify user impact of reliability issues to prioritize infrastructure investment and set SLOs.
+
+### Prompt Patterns × Conversion
+
+> **The Question:** *"Which prompt types lead to highest satisfaction and paid conversion?"*
+
+| Data Sources | |
+|---|---|
+| Mixpanel | Prompt events, satisfaction signals |
+| Billing system | Conversion, plan data |
+
+**Business Value:** Understand which use cases your AI product serves best, informing positioning and fine-tuning.
+
+## Prompts by Role
+
+### Product Manager
+
+- Retention curve for users who used AI feature 5+ times in their first week?
+- Funnel from free signup to first AI interaction to 10th interaction to upgrade to paid?
+- Daily trend of AI outputs per user, segmented by plan tier?
+- User segments with highest thumbs-down ratio on AI outputs?
+- Engagement pattern for users who hit rate limits vs. those who don't?
+- Average time from signup to first "power use" session (10+ prompts)?
+- Output exported rate difference between free and paid users?
+- Adoption curve for newest model version (are users switching)?
+- Conversion rate for users who hit "wow moment" in session 1 vs. later?
+- Which use case categories (writing, coding, analysis) have highest retention correlation?
+
+### ML Engineering Lead
+
+- Negative feedback trend (thumbs down, regenerations) over 30 days by model_version?
+- When error rate spiked last week, what was impact on session frequency for 7 days after?
+- Which prompt categories generate most "regenerate" or "edit" events (quality gaps)?
+- Satisfaction signals between model v2.3 and v2.4?
+- Latency threshold where we lose users (response time vs. engagement)?
+- Token count per prompt trend over time (are prompts getting longer)?
+- Which error_types correlate most with session abandonment?
+- Sessions with model switch event (do those users show higher or lower satisfaction)?
+- Output quality distribution across use_case_categories?
+- After deploying model v2.4, Day 1 and Day 7 impact on output acceptance rate?
+
+### Data Analyst
+
+- Monthly cohort retention table for 12 months (M0 through M6)
+- Power user curve: distribution by active days per month?
+- Segment by plan_type: prompts per session, satisfaction rate, retention
+- Frequency distribution of prompts per week for active users?
+- All events with 30-day volume sorted by frequency?
+- Data quality? Events missing model_version or output_quality_score?
+- Behavioral paths of users who convert vs. churn during trial?
+- Median prompts-per-session by platform and plan type?
+- Properties most predictive of 90-day retention?
+- Daily trend of total prompts, unique users, avg prompts per user for 6 months?
+
+### Growth / Marketing Lead
+
+- Signup-to-activation conversion by channel (activation = 3+ prompts)?
+- Channels bringing users with highest 30-day retention, not just signups?
+- Free-to-paid conversion by use_case_category (which drives most upgrades)?
+- Behavior of users from "AI for [use case]" landing pages vs. generic signups?
+- Viral coefficient (share/export action rate and downstream signup)?
+- Conversion funnel for content marketing vs. product-led referral acquisitions?
+- Segments with highest quota-warning-to-upgrade ratio (pricing optimization targets)?
+- Reactivation rate for re-engagement campaign recipients last month?
+- Behavior difference: work email vs. personal email signups?
+- Trial usage patterns that predict conversion with highest accuracy?
+
+### Executive
+
+- AI dashboard: DAU, prompts/user, satisfaction %, free-to-paid conversion, cost/active user (WoW and MoM)
+- Unit economics (how does usage-based cost scale with engagement)?
+- Which AI capability is driving the most engagement growth?
+- Model quality vs. business metrics (does better AI = better retention)?
+- Biggest risk in our user base (any segment with declining engagement)?
+
+## Recommended Data Connections
+
+| Source | Purpose |
+|--------|---------|
+| 📈 Weights & Biases | Model eval & experiment tracking |
+| 🐛 Sentry | Error & latency monitoring |
+| 💳 Stripe | Billing & usage-based pricing |
+| 🔧 GitHub | Deployment & release tracking |
+| 💬 Slack | ML & product team alerts |
+| 🏔️ Snowflake / BigQuery | Model logs & cost data |

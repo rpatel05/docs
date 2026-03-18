@@ -29,6 +29,7 @@ export default {
   "guides-by-use-case": "Guides by Use Case",
   "guides-by-workflow": "Guides by Workflow",
   "guides-by-topic": "Guides by Topic",
+  "mcp-industry-guides": "MCP Industry Guides",
   "best-practices-and-playbooks": {
     type: "separator",
     title: (

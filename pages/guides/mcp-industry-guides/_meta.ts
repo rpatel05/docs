@@ -1,9 +1,6 @@
 export default {
   'index': 'Overview',
-  'industry-guides': {
-    title: 'Industry Guides',
-    type: 'separator'
-  },
+  'industry-guides': 'Industry Guides',
   'integration-pairings': 'Integration Pairings',
   'data-readiness': 'Data Readiness Checklist',
 }
