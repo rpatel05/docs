@@ -1,0 +1,34 @@
+import { Cards, Callout } from 'nextra/components'
+
+# MCP Industry Guides
+
+Connect Mixpanel product analytics with your entire data stack through the Model Context Protocol. These guides show you how to combine Mixpanel data with other tools — CRM, billing, support, and more — to answer questions that previously required data engineering work.
+
+<Callout type="info">
+  Mixpanel MCP Server is currently in Beta. For setup instructions, see the [MCP Overview](/docs/features/mcp).
+</Callout>
+
+## Choose Your Industry
+
+Each guide includes vertical-specific use cases, cross-source data joins, role-based prompt libraries, and recommended MCP connections.
+
+<Cards>
+  <Cards.Card title="🏦 Finance" href="/docs/features/mcp/industry-guides/finance" />
+  <Cards.Card title="🏥 Healthcare" href="/docs/features/mcp/industry-guides/healthcare" />
+  <Cards.Card title="🚀 B2B SaaS" href="/docs/features/mcp/industry-guides/b2b-saas" />
+  <Cards.Card title="🛒 Ecommerce" href="/docs/features/mcp/industry-guides/ecommerce" />
+  <Cards.Card title="🎬 Media & Entertainment" href="/docs/features/mcp/industry-guides/media-entertainment" />
+  <Cards.Card title="🤖 AI" href="/docs/features/mcp/industry-guides/ai" />
+</Cards>
+
+## MCP Maturity Model
+
+Use this framework to understand where your team is today and what to unlock next.
+
+| Level | Name | Description | Example |
+|-------|------|-------------|---------|
+| 1 | **Single Query** | Ask basic questions about one metric in Mixpanel. | *"What's our 7-day retention?"* |
+| 2 | **Multi-Query Analysis** | Chain multiple Mixpanel queries to build a complete picture. | *"Show me retention by channel, then break down the top channel by feature usage."* |
+| 3 | **Cross-Source Joins** | Connect Mixpanel with one additional data source for combined analysis. | *"Which users with high feature adoption also have open Salesforce opportunities?"* |
+| 4 | **Automated Delivery** | Set up recurring MCP-powered reports delivered to Slack or other channels. | *Weekly metrics digest posted to your team's Slack every Monday.* |
+| 5 | **Embedded in Decisions** | MCP analysis is part of standing rituals — sprint planning, QBRs, board reporting. | *Every product review starts with an MCP-generated impact summary.* |

@@ -1,0 +1,43 @@
+import { Callout } from 'nextra/components'
+
+# Data Readiness Checklist
+
+Run through this checklist before connecting MCP to ensure the most accurate and useful results from your queries.
+
+## Event Naming
+
+- [ ] Events use clear, consistent naming conventions (e.g., `Signup Completed` not `signup_v2_final`)
+- [ ] No duplicate events tracking the same action with different names
+- [ ] Events are documented in [Mixpanel Lexicon](/docs/data-governance/lexicon) with descriptions
+
+## Property Hygiene
+
+- [ ] Key properties (plan type, user role, acquisition channel, etc.) are consistently populated
+- [ ] Property values are standardized (e.g., `Enterprise` not a mix of `enterprise`, `ent`, `Enterprise Plan`)
+- [ ] Numeric properties that should be numbers aren't stored as strings
+
+## Identity & Segmentation
+
+- [ ] [User identity](/docs/tracking-methods/id-management) is properly configured so events tie to the right users
+- [ ] [Group analytics](/docs/data-structure/group-analytics) is set up if you need account-level analysis (B2B)
+- [ ] Key user segments are defined and maintained
+
+## Lexicon & Governance
+
+- [ ] Events and properties are documented in [Lexicon](/docs/data-governance/lexicon) with descriptions and ownership
+- [ ] Data quality issues are reviewed regularly
+- [ ] Deprecated or test events are hidden or marked appropriately
+
+<Callout type="info">
+  **Not there yet?** That's OK — MCP is actually a great tool for auditing your data. Try asking:
+
+  ```
+  Show me all events in my project and their 30-day volume
+  ```
+
+  ```
+  What data quality issues exist in my project?
+  ```
+
+  The `Get-Events`, `Get-Property-Names`, and `Get-Issues` tools are specifically designed for data discovery and quality management.
+</Callout>
