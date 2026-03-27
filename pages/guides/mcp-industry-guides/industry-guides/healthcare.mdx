@@ -1,4 +1,5 @@
 import { Callout } from 'nextra/components'
+import RolePrompts from '../../../../components/RolePrompts'
 
 # Healthcare
 
@@ -58,52 +59,63 @@ Healthcare organizations use Mixpanel to track patient engagement across portals
 
 ## Prompts by Role
 
-### Product Manager
-
-- Show me the telehealth visit completion funnel broken down by device type over the last 90 days
-- What's the 30-day retention for patients who completed onboarding in one session vs. multiple?
-- Which features have the highest weekly active usage among patients aged 65+?
-- Compare the appointment booking funnel for new patients vs. returning patients
-- What's the average time from account creation to first appointment booked?
-- Which onboarding step has the highest abandonment, and does it vary by insurance type?
-- Show me the adoption curve for our medication reminder feature since launch
-- What's the funnel from portal login to message sent to response viewed, by device type?
-- How does feature adoption differ between provider-referred vs. self-signup patients?
-- What percentage of patients who use secure messaging are retained at 90 days?
-
-### Data Analyst
-
-- Run a retention analysis for the Q4 2025 patient cohort, segmented by primary care type
-- What are the top 10 most frequent events and their week-over-week trends for 6 months?
-- Show me the frequency distribution for portal logins (how often do active patients log in per month)?
-- Which user properties are most different between patients retained at Day 60 vs. churned?
-- Pull all events containing "telehealth" and show their daily trend for the past quarter
-- What data quality issues exist? Events with inconsistent property values or missing fields?
-- Compare engagement metrics across our three patient segments
-- What's the median session duration by platform, and has it changed since our last app update?
-- List all properties on "Appointment Booked" and show distribution of values
-- Run a segmentation of patients by age_group and show the top 5 events for each
-
-### Clinical / Operations Lead
-
-- What percentage of patients are completing full care plan milestones each month? Show the trend
-- Which departments have the lowest appointment completion rates based on portal engagement?
-- Are patients who engage with educational content more likely to complete follow-up visits?
-- Show me the weekly trend of prescription refill requests through the portal vs. phone calls
-- What's the no-show rate for telehealth vs. in-person, correlated with portal engagement?
-- Which patient populations are underutilizing the patient portal?
-- What's the average time between symptom checker usage and appointment booking?
-- Show me care plan compliance rates for patients using medication reminder vs. those not
-- How many patients actively use secure messaging, and what's the provider response time trend?
-- Which wellness program features have the highest engagement?
-
-### Executive
-
-- Patient engagement dashboard: monthly active patients, portal adoption, telehealth completion, 30-day retention (MoM and YoY)
-- What's the overall digital health ROI story (engagement vs. care adherence metrics)?
-- Which patient segments are growing fastest in digital adoption?
-- How does mobile app engagement compare to the web portal?
-- What are the leading indicators that a patient will disengage from our platform?
+<RolePrompts roles={[
+  {
+    label: "Product Manager",
+    prompts: [
+      "Show me the telehealth visit completion funnel broken down by device type over the last 90 days",
+      "What's the 30-day retention for patients who completed onboarding in one session vs. multiple?",
+      "Which features have the highest weekly active usage among patients aged 65+?",
+      "Compare the appointment booking funnel for new patients vs. returning patients",
+      "What's the average time from account creation to first appointment booked?",
+      "Which onboarding step has the highest abandonment, and does it vary by insurance type?",
+      "Show me the adoption curve for our medication reminder feature since launch",
+      "What's the funnel from portal login to message sent to response viewed, by device type?",
+      "How does feature adoption differ between provider-referred vs. self-signup patients?",
+      "What percentage of patients who use secure messaging are retained at 90 days?"
+    ]
+  },
+  {
+    label: "Data Analyst",
+    prompts: [
+      "Run a retention analysis for the Q4 2025 patient cohort, segmented by primary care type",
+      "What are the top 10 most frequent events and their week-over-week trends for 6 months?",
+      "Show me the frequency distribution for portal logins (how often do active patients log in per month)?",
+      "Which user properties are most different between patients retained at Day 60 vs. churned?",
+      "Pull all events containing \"telehealth\" and show their daily trend for the past quarter",
+      "What data quality issues exist? Events with inconsistent property values or missing fields?",
+      "Compare engagement metrics across our three patient segments",
+      "What's the median session duration by platform, and has it changed since our last app update?",
+      "List all properties on \"Appointment Booked\" and show distribution of values",
+      "Run a segmentation of patients by age_group and show the top 5 events for each"
+    ]
+  },
+  {
+    label: "Clinical / Operations Lead",
+    prompts: [
+      "What percentage of patients are completing full care plan milestones each month? Show the trend",
+      "Which departments have the lowest appointment completion rates based on portal engagement?",
+      "Are patients who engage with educational content more likely to complete follow-up visits?",
+      "Show me the weekly trend of prescription refill requests through the portal vs. phone calls",
+      "What's the no-show rate for telehealth vs. in-person, correlated with portal engagement?",
+      "Which patient populations are underutilizing the patient portal?",
+      "What's the average time between symptom checker usage and appointment booking?",
+      "Show me care plan compliance rates for patients using medication reminder vs. those not",
+      "How many patients actively use secure messaging, and what's the provider response time trend?",
+      "Which wellness program features have the highest engagement?"
+    ]
+  },
+  {
+    label: "Executive",
+    prompts: [
+      "Patient engagement dashboard: monthly active patients, portal adoption, telehealth completion, 30-day retention (MoM and YoY)",
+      "What's the overall digital health ROI story (engagement vs. care adherence metrics)?",
+      "Which patient segments are growing fastest in digital adoption?",
+      "How does mobile app engagement compare to the web portal?",
+      "What are the leading indicators that a patient will disengage from our platform?"
+    ]
+  }
+]} />
 
 ## Recommended Data Connections
 
