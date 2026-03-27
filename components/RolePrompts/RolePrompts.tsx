@@ -14,9 +14,17 @@ export default function RolePrompts({ roles }: RolePromptsProps) {
     <Tabs items={tabItems}>
       {roles.map((role, index) => (
         <Tabs.Tab key={index}>
-          <ul style={{ marginTop: '1rem' }}>
+          <ul style={{
+            marginTop: '1.5rem',
+            marginLeft: '1.5rem',
+            listStyleType: 'disc',
+            lineHeight: '1.8'
+          }}>
             {role.prompts.map((prompt, promptIndex) => (
-              <li key={promptIndex} style={{ marginBottom: '0.5rem' }}>
+              <li key={promptIndex} style={{
+                marginBottom: '0.75rem',
+                paddingLeft: '0.25rem'
+              }}>
                 {prompt}
               </li>
             ))}
