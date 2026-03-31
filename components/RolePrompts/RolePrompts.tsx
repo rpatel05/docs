@@ -17,14 +17,18 @@ export default function RolePrompts({ roles }: RolePromptsProps) {
           <ul style={{
             marginTop: '1.5rem',
             marginLeft: '1.5rem',
+            paddingLeft: '1.5rem',
             listStyleType: 'disc',
-            lineHeight: '1.8'
-          }}>
+            listStylePosition: 'outside',
+            lineHeight: '1.8',
+            display: 'block'
+          } as React.CSSProperties}>
             {role.prompts.map((prompt, promptIndex) => (
               <li key={promptIndex} style={{
                 marginBottom: '0.75rem',
-                paddingLeft: '0.25rem'
-              }}>
+                paddingLeft: '0.5rem',
+                display: 'list-item'
+              } as React.CSSProperties}>
                 {prompt}
               </li>
             ))}
